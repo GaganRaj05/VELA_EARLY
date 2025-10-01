@@ -1,0 +1,154 @@
+.hero-section {
+  top: 0;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.video-background img {
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.old-head {
+  width: 90%;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+  letter-spacing: 10px;
+  margin-bottom: 35px;
+}
+
+.new-head {
+  font-size: 65px;
+  margin: 0;
+  letter-spacing: 15px;
+  color: #ddd7b1;
+}
+
+.hero-content p {
+  font-size: 22px;
+  letter-spacing: 5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
+  width: 95%;
+  color: #CCCCCC;
+  text-transform: none!important;
+}
+
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1.5;
+}
+
+.hero-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.arrow-icon {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: 
+  center;
+  color: black;
+  font-size: 30px;
+}
+
+.hero-button:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width:1200px) {
+  .hero-content h1{
+    font-size: 40px;
+  }
+  .hero-content p {
+    font-size: 15px;
+  }
+}
+@media (max-width:950px) {
+  .hero-content h1{
+    font-size: 30px;
+  }
+  .hero-content button {
+    height: 30px;
+    font-size: 15px;
+  }
+}
+@media (max-width:620px) {
+  .hero-content h1 {
+    font-size: 18px;
+  }
+  .new-head {
+    font-size: 25px;
+  }
+  .hero-content p {
+    font-size:12px;
+  }
+  .hero-content button {
+    height: 30px!important;
+    width: 250px!important;
+    font-size: 12px!important;
+  }
+
+}
+@media (max-width:530px) {
+  .hero-section {
+    height: 140vh;
+  }
+  .video-background {
+    height: 140vh;
+  }
+  
+}

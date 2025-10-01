@@ -1,0 +1,88 @@
+.home-features {
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+}
+.features-banner {
+    margin-top: 70px;
+    height: 192px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.features-banner h1 {
+    font-size: 55px;
+    height: 143px;
+    width: 834px;
+    text-align: center;
+    letter-spacing: 10px;
+    margin-left: 40px;
+}
+
+.features-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; 
+}
+
+.features-content > div {
+  flex: 0 0 auto; 
+}
+.feature-text {
+    position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+}
+
+@media (max-width:2560px) {
+    .features-banner h1 {
+    font-size: 55px;
+    width: 70%;
+  }
+
+}
+@media (max-width:805px) {
+  .features-banner h1 {
+    padding: 0;
+    font-size: 40px;
+  }
+}
+@media (max-width:602px) {
+  .features-banner {
+  }
+  .features-banner h1 {
+    font-size:40px;
+  }
+}
+
+@media (max-width:530px) {
+  .home-features {
+    height: 140vh!important;
+  }
+  .features-banner h1 {
+    font-size:25px;
+    margin-bottom: 0;
+  }  
+}
+
+@media (max-width:372px) {
+  .features-banner h1 {
+    font-size:18px;
+    letter-spacing: 5px;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }  
+}
+

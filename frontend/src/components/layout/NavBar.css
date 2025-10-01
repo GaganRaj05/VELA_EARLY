@@ -1,0 +1,230 @@
+.nav-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  min-width: 100%;
+  max-width: 100%;
+  z-index: 998;
+  background: transparent; 
+
+}
+.attachment-intake-nav {
+    background-color: #290A29;
+    
+}
+
+
+.verify-email-btn {
+    background-color: #C6AB6C;
+}
+.verify-email-sbtn {
+    border: 3px solid #C6AB6C;
+    color: #C6AB6C;
+}
+
+.nav-bar {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: none;
+
+}
+.nav-separator {
+  width: 90%;
+  height: 0.5px;
+  background-color: white; 
+  border: none;
+    margin: auto;
+}
+.verify-email-hr {
+    background-color: #C6AB6C;
+}
+.attachment-intake-hr {
+    background-color: #C6AB6C;
+}
+.nav-logo {
+    font-size: 35px;
+    letter-spacing: 3.5px;
+    margin-left: 112px;
+    color: #f5eec4;
+}
+.attachment-intake-logo {
+  color: #C6AB6C;
+
+}
+.verify-email-logo {
+    color: #C6AB6C;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+    font-size: 17px;
+    letter-spacing: 2.5px;
+    margin-left:150px !important;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links li a:hover {
+    opacity: 0.7;
+}
+
+.attachment-intake-links li a {
+color: #C6AB6C;
+}
+.nav-btns {
+    display: flex;
+    gap: 17px;
+    padding: 0;
+    margin-right: 100px !important;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+.glass-navbar {
+background: rgba(255, 255, 255, 0.09);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.8px);
+-webkit-backdrop-filter: blur(3.8px);
+border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+z-index: 666;
+}
+
+@media (max-width:2800px) {
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-links {
+        margin: 0;
+        margin-left: 70px;
+    }
+    .nav-btns {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-btns {
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 1300px) {
+    .nav-logo {
+        margin-left: 20px;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+        margin-right: 20px;
+        z-index: 1000;
+    }
+    
+    .nav-links, .nav-btns {
+        position: fixed;
+        left: 0;
+        width: 100%!important;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        padding: 0;
+        margin: 0;
+        pointer-events: none;
+        opacity: 0;
+    }
+    
+    .nav-links {
+        top: 0;
+        height: 30vh; 
+        background-color: rgba(0, 0, 0, 0.9); 
+        transform: translateY(-100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin: 0!important;
+    }
+    
+    .nav-btns {
+        top: 29.9vh; 
+        height: 10vh; 
+        background-color: rgba(0, 0, 0, 0.9); 
+        transform: translateY(100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        padding-top: 30px;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        width: 100%;
+        pointer-events: all;
+    }
+    
+    .nav-btns.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+    
+    
+    .nav-links li a {
+        font-size: 18px;
+    }
+    
+    .nav-btns .secondary-btn,
+    .nav-btns .primary-btn {
+        width: 80%;
+        max-width: 250px;
+        height: 40px;
+        margin: 0 auto;
+    }
+}
+
+
+.verify-email-txt li a {
+    color: #C6AB6C;
+}
+.how-it-works-logo {
+    color:#BE9551;
+}
+.how-it-works-links  li a{
+    color: #BE9551;
+}
+.how-it-works-sbtn {
+    color: #BE9551;
+    border: 1px solid #BE9551;
+}
+.how-it-works-pbtn {
+    background-color: #BE9551;
+}
+.how-it-works-nav-seperator {
+    background-color: #BE9551;
+}

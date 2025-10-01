@@ -1,0 +1,891 @@
+.membership-tiers {
+    background-image: url('/images/tiers page background.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.membershipt-tiers-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-static {
+      border: 0.5px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+#imagesgoldkey.png {
+  height: 80px;
+  width: 90px;
+}
+.card h3 {
+  margin: 0;
+  padding: 20px;
+  color:white;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.card.flippable {
+  background-color: transparent;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flippable:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-color: white;
+}
+
+.card-front {
+  background-color: transparent;
+  color: white;
+}
+
+.card-back {
+  background-color: transparent;
+  transform: rotateY(180deg);
+  flex-direction: column;
+}
+
+.card-back h3 {
+  margin-bottom: 15px;
+}
+
+.card-back .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.card-back p {
+  margin: 0;
+  color: white;
+}
+
+.card-static {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-front h3 {
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}   
+.card-back h3 {
+    color: whitesmoke;
+}
+.card-front button {
+    margin: 0;
+}
+.card-static h3 {
+    padding-bottom: 0;
+}
+
+.card-static button {
+    margin-top: 25px;
+}
+.tier-info-head-temp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+}
+.membership-head h1 {
+    font-size: 55px;
+    text-align: center;
+    letter-spacing: 15px;
+    margin-left: 50px;
+    width: 90%;
+    padding-top: 90px;
+}
+.membership-head p {
+    font-size: 22px;
+    letter-spacing: 5px;
+    width: 90%;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 100%);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.modal-content {
+  background: linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  color: #fff;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 650px;
+  max-height: 75vh;
+  overflow-y: auto;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 215, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  letter-spacing: 1.5px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  position: relative;
+  animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow-x: hidden;
+}
+
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #FFD700 20%, #FFA500 50%, #FFD700 80%, transparent 100%);
+  border-radius: 0 0 10px 10px;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-card-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  position: relative;
+}
+
+.modal-card-head h1 {
+  margin: 0.5rem 0 0 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.tier-info-head-temp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.tier-info-head-temp p {
+  max-width: 500px;
+  fontSize: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.tier-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.tier-info-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, rgba(255, 215, 0, 0.01) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tier-info-list li:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 215, 0, 0.03) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transform: translateX(5px);
+}
+
+.tier-info-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tier-info-list .icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 3px;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+}
+
+.tier-info-list li strong {
+  color: #FFD700;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.tier-info-list li p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 300;
+}
+
+.modal-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.modal-controls button {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 10px 25px rgba(255, 215, 0, 0.3),
+    0 0 0 1px rgba(255, 215, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  height: 50px;
+}
+
+.modal-controls button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.modal-controls button:hover::before {
+  left: 100%;
+}
+
+.modal-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 15px 35px rgba(255, 215, 0, 0.4),
+    0 0 0 1px rgba(255, 215, 0, 0.7);
+  background: linear-gradient(135deg, #FFA500 0%, #FFD700 50%, #FFA500 100%);
+}
+
+.modal-controls button:active {
+  transform: translateY(0);
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.modal-close:hover {
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+}
+#imagesgoldkey.png {
+  width: 50px;
+}
+
+#imagesInnerCircleIc.png {
+  min-height: 500px;
+  width: 50px;
+}
+
+
+@media (min-width: 1200px) {
+  .membership-tiers {
+    height: 120vh !important;
+  }
+  
+  .membership-head {
+    margin-top: 10px;
+    padding-top: 90px;
+  }
+  
+  .membershipt-tiers-cards {
+    padding: 60px;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .card h3 {
+    font-size: 18px;
+    padding: 20px;
+  }
+  
+  .card-front button,
+  .card-back button,
+  .card-static button {
+    width: 170px;
+    height: 30px;
+    font-size: 28px;
+  }
+}
+
+
+/* Desktop - 992px to 1199px */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .membership-tiers {
+    height: 120vh;
+  }
+  
+  .membership-head {
+  }
+  
+  .membership-head h1 {
+    font-size: 50px;
+    padding-top: 0px;
+    letter-spacing: 9px;
+  }
+  
+  .membershipt-tiers-cards {
+    padding: 50px 40px;
+    gap: 25px;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .card h3 {
+    font-size: 18px;
+    padding: 18px;
+  }
+  
+  .card-front button,
+  .card-back button,
+  .card-static button {
+    width: 160px;
+    height: 28px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .membership-tiers {
+    height: 160vh;
+  }
+  
+  .membership-head h1 {
+    font-size: 45px;
+    letter-spacing: 8px;
+    margin-left: 30px;
+  }
+  
+  .membership-head p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-left: 30px;
+  }
+  
+  .membershipt-tiers-cards {
+    padding: 40px 20px;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .card h3 {
+    font-size: 15px;
+    padding: 15px;
+  }
+  
+  .card-front button,
+  .card-back button,
+  .card-static button {
+    width: 150px;
+    height: 26px;
+    font-size: 10px;
+  }
+  
+  .modal-content {
+    width: 85%;
+    padding: 2rem 1.5rem;
+    max-height: 75vh;
+  }
+  
+  .modal-card-head h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Tablet Portrait - 600px to 767px */
+@media (max-width: 767px) and (min-width: 600px) {
+  .membership-tiers {
+    height: 100%;
+    min-height: 130vh;
+  }
+  
+  .membership-head h1 {
+    font-size: 35px;
+    letter-spacing: 6px;
+    margin-left: 20px;
+    width: 95%;
+  }
+  
+  .membership-head p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-left: 20px;
+    width: 95%;
+  }
+  
+  .membershipt-tiers-cards {
+    padding: 30px 15px;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .card h3 {
+    font-size: 14px;
+    padding: 12px;
+  }
+  
+  .card-front button,
+  .card-back button,
+  .card-static button {
+    width: 140px;
+    height: 25px;
+    font-size: 10px;
+  }
+  
+  .modal-content {
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    max-height: 80vh;
+    width: 90%;
+  }
+  
+  .modal-card-head h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Large Mobile - 480px to 599px */
+@media (max-width: 599px) and (min-width: 480px) {
+  .membership-tiers {
+    height: 100%;
+    min-height: 140vh;
+  }
+  
+  .membership-head h1 {
+    font-size: 28px;
+    letter-spacing: 4px;
+    margin-left: 15px;
+    width: 97%;
+    padding-top: 90px;
+  }
+  
+  .membership-head p {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-left: 15px;
+    width: 97%;
+  }
+  
+  .membershipt-tiers-cards {
+    padding: 25px 15px;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 280px;
+    height: 200px;
+  }
+  
+  .card h3 {
+    font-size: 13px;
+    padding: 10px;
+  }
+  
+  .card-front,
+  .card-back {
+    padding: 15px;
+  }
+  
+  .card-front button,
+  .card-back button,
+  .card-static button {
+    width: 130px;
+    height: 24px;
+    font-size: 9px;
+  }
+  
+  /* Disable flip animation on touch devices */
+  .card.flippable:hover .card-inner {
+    transform: none;
+  }
+  
+  .modal-content {
+    width: 90%;
+    padding: 1.5rem;
+    max-height: 85vh;
+    border-radius: 10px;
+  }
+  
+  .modal-card-head h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 375px) {
+  .membership-tiers {
+    height: 100%;
+    min-height: 150vh;
+  }
+  
+  .membership-head h1 {
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-left: 10px;
+    width: 98%;
+  }
+  
+  .membership-head p {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    margin-left: 10px;
+    width: 98%;
+  }
+  
+  .membershipt-tiers-cards {
+    padding: 20px 10px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 260px;
+    height: 180px;
+  }
+  
+  .card h3 {
+    font-size: 12px;
+    padding: 8px;
+  }
+  
+  .card-front,
+  .card-back {
+    padding: 12px;
+  }
+  
+  .card-front button,
+  .card-back button,
+  .card-static button {
+    width: 120px;
+    height: 22px;
+    font-size: 8px;
+  }
+  
+  .modal-content {
+    padding: 1.5rem 1rem;
+    width: 95%;
+    max-height: 85vh;
+    border-radius: 8px;
+  }
+  
+  .modal-card-head h1 {
+    font-size: 1.4rem;
+  }
+  
+  .modal-controls button {
+    min-width: 140px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Small Mobile - 320px to 374px */
+@media (max-width: 374px) {
+  .membership-tiers {
+    height: 100%;
+    min-height: 160vh;
+  }
+  
+  .membership-head h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-left: 5px;
+    width: 99%;
+  }
+  
+  .membership-head p {
+    font-size: 7px;
+    letter-spacing: 1px;
+    margin-left: 5px;
+    width: 99%;
+  }
+  
+  .membershipt-tiers-cards {
+    padding: 15px 5px;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 240px;
+    height: 160px;
+  }
+  
+  .card h3 {
+    font-size: 11px;
+    padding: 6px;
+  }
+  
+  .card-front,
+  .card-back {
+    padding: 10px;
+  }
+  
+  .card-front button,
+  .card-back button,
+  .card-static button {
+    width: 110px;
+    height: 20px;
+    font-size: 7px;
+  }
+  
+  .modal-content {
+    width: 98%;
+    padding: 1rem 0.8rem;
+    max-height: 90vh;
+    border-radius: 6px;
+    margin: 0 auto;
+  }
+  
+  .modal-card-head h1 {
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
+  }
+  
+  .modal-controls button {
+    width: 120px;
+    height: 35px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra Small Mobile - below 320px */
+@media (max-width: 319px) {
+  .membership-tiers {
+    height: 100%;
+    min-height: 180vh;
+  }
+  
+  .membership-head h1 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-left: 2px;
+    width: 100%;
+  }
+  
+  .membership-head p {
+    font-size: 6px;
+    letter-spacing: 0.5px;
+    margin-left: 2px;
+    width: 100%;
+  }
+  
+  .membershipt-tiers-cards {
+    padding: 10px 2px;
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 220px;
+    height: 150px;
+  }
+  
+  .card h3 {
+    font-size: 10px;
+    padding: 5px;
+  }
+  
+  .card-front,
+  .card-back {
+    padding: 8px;
+  }
+  
+  .card-front button,
+  .card-back button,
+  .card-static button {
+    width: 100px;
+    height: 18px;
+    font-size: 6px;
+  }
+  
+  .modal-content {
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    max-height: 95vh;
+    border-radius: 4px;
+    margin: 0;
+  }
+  
+  .modal-card-head h1 {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+  }
+  
+  .modal-controls button {
+    width: 100px;
+    height: 30px;
+    font-size: 0.7rem;
+  }
+}

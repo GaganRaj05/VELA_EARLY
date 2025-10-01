@@ -1,0 +1,145 @@
+.card-container {
+  perspective: 1000px;
+  margin: 0;
+  padding: 0;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.card-container:hover .card-inner {
+  transform: rotateY(180deg);
+
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid #B4A36C!important;
+
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+
+}
+
+.card-front {
+  gap: 15px;
+
+}
+
+.card-front h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: rgba(255, 255, 255, 0.2);
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.card-back p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+[id$="bg"] {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+[id$="bg"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+[id$="bg"] > * {
+  position: relative;
+  z-index: 2;
+}
+
+#TemptationTuesdaybg {
+  background-image: url('/images/TTUp.png');
+}
+
+#RevealNightbg {
+  background-image: url('/images/RevealNightImg.png');
+}
+
+#DesireVaultbg {
+  background-image: url('/images/DDUp.png');
+}
+
+#MysteryMatchbg {
+  background-image: url('/images/MMUp.png');
+}
+
+#RevealNight,
+#TemptationTuesday,
+#DesireVault,
+#MysteryMatch {
+  height: 50px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.card-front:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width:1440px) {
+  .card-container {
+    height: 200px !important;
+    width: 200px!important;
+  }
+}
+
+
+@media (max-width: 890px) {
+  .card-container {
+    width: 180px!important;
+    height: 180px!important;
+  }
+  
+  .card-front h3 {
+    font-size: 15px!important;
+  }
+  
+  .card-back p {
+    font-size: 12px;
+  }
+}
+@media (max-width:530px) {
+  .card-container {
+    height: 150px!important;
+    width: 150px!important;
+  }
+}

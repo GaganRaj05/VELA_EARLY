@@ -1,0 +1,13 @@
+.cta-banner {
+    width: 100%!important;
+    height: 800px;
+    background-image: url('/images/cta.png');
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    align-items: center;
+}
+.cta-banner button {
+    margin-right: 15px;
+}
