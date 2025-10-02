@@ -10,17 +10,20 @@ export default function ReusableSection({
   secHead,
 }) {
   useEffect(() => {
-    if (isVisible && videoRef.current) {
-      setTimeout(() => {
-        if (videoRef.current) {
-          videoRef.current.currentTime = 0;
-          videoRef.current.play().catch((error) => {
-            console.log("Autoplay prevented, user interaction required");
-          });
-        }
-      }, 100);
-    }
-  }, [isVisible]);
+  if (isVisible && videoRef.current) {
+    const playVideo = async () => {
+      try {
+        videoRef.current.currentTime = 0;
+        await videoRef.current.play();
+        setUserInteracted(true); 
+      } catch (error) {
+        console.log("Autoplay blocked, waiting for user interaction");
+      }
+    };
+    
+    playVideo();
+  }
+}, [isVisible]);
   const videoRef = useRef(null);
   const [isPopupClicked, setIsClicked] = useState(false);
 
@@ -47,8 +50,8 @@ export default function ReusableSection({
       <div className="hero-content">
         {isVisible && (
           <>
-            <h1 className="new-head hoho fade-move-up">
-              {secHead ? secHead : "nope"}{" "}
+            <h1 className={secHead === "REVEAL NIGHT"?"new-head hoho fade-move-up mr-removed":"new-head hoho fade-move-up"}>
+              {secHead ? secHead : ""}{" "}
             </h1>
             <h1
               className="old-head

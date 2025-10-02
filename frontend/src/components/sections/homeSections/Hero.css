@@ -56,10 +56,11 @@ font-weight: 300;
   margin-bottom: 1rem;
   letter-spacing: 10px;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .new-head {
-  
+  text-align: center;
   font-size: 65px;
   margin: 0;
   letter-spacing: 15px;
@@ -150,7 +151,7 @@ font-weight: 300;
   }
   .new-head {
     font-size: 25px;
-    margin-left: 20px;
+    text-align: center;
   }
   .hero-content p {
     font-size:15px;
@@ -161,7 +162,7 @@ font-weight: 300;
     font-size: 12px!important;
     margin-left: 20px;
   }
-
+  
 }
 @media (max-width:530px) {
   .hero-section {
@@ -173,6 +174,7 @@ font-weight: 300;
   .hero-content h1 {
     font-size: 22px;
     letter-spacing: 2px;
+    
   }
   
 }
