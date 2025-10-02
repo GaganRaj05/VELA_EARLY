@@ -8,12 +8,14 @@
     letter-spacing: 10px;
     height: 52px;
     margin-left: 50px;
+    color: #b4a36c;
 }
 .final-cta-info {
     display: flex;
     height: calc(100% - 52px);
     width: 100%;
     margin-top: 50px;
+    color: #a4a39f;
 }
 .final-cta-info div  {
     width: 50%;
@@ -34,6 +36,8 @@
     justify-content: start;
     text-align: center;
     flex-direction: column;
+        font-family: "Cormorant", serif;
+
     font-size: 18px;
     letter-spacing: 5px;
     padding-top: 150px;
@@ -54,7 +58,7 @@
     height: 453px;
     width: 469px;
 
-        margin-right: 50px;
+        margin-right: 80px;
         margin-top: 20px;
 
     }
@@ -64,9 +68,14 @@
     .final-cta-content p {
         width: 90%;
         max-width: 90%;
-        letter-spacing:5px;
-        font-size: 20px;
+        letter-spacing:2px;
+        font-size: 22px;
 
+    }
+}
+@media (max-width:1440px) {
+    .final-cta-content {
+        padding-top:30px;
     }
 }
 
@@ -244,9 +253,9 @@
 
 @media (max-width:325px) {
     .final-cta h1 {
-        font-size: 14px;
+        font-size: 18px;
         padding: 0 10px;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
     }
     .final-cta-content {
         padding: 0 10px;

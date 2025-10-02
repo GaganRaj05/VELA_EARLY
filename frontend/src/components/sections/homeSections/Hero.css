@@ -6,6 +6,7 @@
   overflow: hidden;
 }
 
+
 .video-background {
   position: absolute;
   width: 100%;
@@ -41,35 +42,42 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #aaa9a5;
   text-align: center;
   padding: 20px;
 }
 
 .old-head {
+    font-family: "Cormorant", serif;
+font-weight: 300;
   width: 90%;
   font-size: 40px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   margin-bottom: 1rem;
   letter-spacing: 10px;
-  margin-bottom: 35px;
+  letter-spacing: 2px;
 }
 
 .new-head {
+  
   font-size: 65px;
   margin: 0;
   letter-spacing: 15px;
   color: #ddd7b1;
+  margin-bottom: 15px;
 }
 
 .hero-content p {
-  font-size: 22px;
-  letter-spacing: 5px;
+  font-family: "Cormorant", serif;
+  margin-top: 5px;
+  font-size: 25px;
+  letter-spacing: 2px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   margin-bottom: 2rem;
-  width: 95%;
-  color: #CCCCCC;
+  width: 90%;
+  color: #aaa9a5;
   text-transform: none!important;
+  z-index: 999;
 }
 
 
@@ -117,9 +125,19 @@
     font-size: 15px;
   }
 }
+@media (max-width:1024px) {
+    .ru-head {
+      font-size: 60px!important;
+    }
+}
+
 @media (max-width:950px) {
   .hero-content h1{
-    font-size: 30px;
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+  .hero-content p {
+    font-size: 18px;
   }
   .hero-content button {
     height: 30px;
@@ -132,23 +150,45 @@
   }
   .new-head {
     font-size: 25px;
+    margin-left: 20px;
   }
   .hero-content p {
-    font-size:12px;
+    font-size:15px;
   }
   .hero-content button {
     height: 30px!important;
     width: 250px!important;
     font-size: 12px!important;
+    margin-left: 20px;
   }
 
 }
 @media (max-width:530px) {
   .hero-section {
-    height: 140vh;
+    height: 100vh;
   }
   .video-background {
     height: 140vh;
   }
+  .hero-content h1 {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
   
+}
+@media (max-width:320px) {
+  .hero-content h1 {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+    .hero-content button {
+    height: 25px!important;
+    width: 200px!important;
+    font-size: 11px!important;
+    margin-left: 20px;
+  }
+  .ru-head {
+    margin-left: 0;
+  }
+
 }

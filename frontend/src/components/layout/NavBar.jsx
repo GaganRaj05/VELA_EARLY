@@ -58,7 +58,7 @@ const NavBar = () => {
           VELA
         </h1>
 
-        <ul
+        {/* <ul
           className={`nav-links ${menuOpen ? "active" : ""} ${
             isVerifyEmailPage ? "verify-email-txt" : ""
           }
@@ -117,7 +117,7 @@ const NavBar = () => {
 
         <button className="mobile-menu-btn" onClick={toggleMenu}>
           {menuOpen ? "✕" : "☰"}
-        </button>
+        </button> */}
       </nav>
       {!scrolled && (
         <hr

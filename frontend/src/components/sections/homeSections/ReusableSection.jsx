@@ -1,7 +1,7 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./Hero.css";
 import Button from "../../ui/Button";
-
+import EarlySignUpForm from "../../forms/EarlySignup";
 export default function ReusableSection({
   video,
   head,
@@ -10,7 +10,7 @@ export default function ReusableSection({
   secHead,
 }) {
   const videoRef = useRef(null);
-
+  const [isPopupClicked, setIsClicked] = useState(false);
   return (
     <div className="hero-section">
       <div className="video-background">
@@ -29,7 +29,9 @@ export default function ReusableSection({
       <div className="hero-content">
         {isVisible && (
           <>
-            <h1 className="new-head fade-move-up">{secHead ? secHead : ""} </h1>
+            <h1 className="new-head hoho fade-move-up">
+              {secHead ? secHead : "nope"}{" "}
+            </h1>
             <h1
               className="old-head
                   fade-move-up"
@@ -44,6 +46,8 @@ export default function ReusableSection({
                 width="368px"
                 margin="0px"
                 borderRadius="33px"
+                                onClick={()=>setIsClicked(true)}
+
               >
                 FIND YOUR MATCH NOW
               </Button>
@@ -55,6 +59,7 @@ export default function ReusableSection({
                 width="368px"
                 margin="0px"
                 borderRadius="33px"
+                onClick={() => setIsClicked(true)}
               >
                 FEEL SOMETHING REAL
               </Button>
@@ -66,6 +71,7 @@ export default function ReusableSection({
                 width="368px"
                 margin="0px"
                 borderRadius="33px"
+                onClick={() => setIsClicked(true)}
               >
                 JOIN NOW
               </Button>
@@ -78,6 +84,7 @@ export default function ReusableSection({
                 margin="0px"
                 borderRadius="33px"
                 fontSize="15px"
+                onClick={() => setIsClicked(true)}
               >
                 THE SECRET STARTS HERE
               </Button>
@@ -85,6 +92,7 @@ export default function ReusableSection({
           </>
         )}
       </div>
+      {isPopupClicked && <EarlySignUpForm setIsClicked={setIsClicked} />}
     </div>
   );
 }

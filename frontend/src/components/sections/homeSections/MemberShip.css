@@ -28,7 +28,7 @@
 }
 
 .card-static {
-      border: 0.5px solid white;
+      border: 0.5px solid #b4a36c;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -43,7 +43,7 @@
 .card h3 {
   margin: 0;
   padding: 20px;
-  color:white;
+  color: #b4a36c;
   font-size: 18px;
   letter-spacing: 2px;
 }
@@ -129,6 +129,7 @@
 }
 
 .card-static button {
+  background-color: #b4a36c;
     margin-top: 25px;
 }
 .tier-info-head-temp {
@@ -138,6 +139,7 @@
   
 }
 .membership-head h1 {
+  
     font-size: 55px;
     text-align: center;
     letter-spacing: 15px;
@@ -146,7 +148,9 @@
     padding-top: 90px;
 }
 .membership-head p {
-    font-size: 22px;
+      font-family: "Cormorant", serif;
+
+    font-size: 25px;
     letter-spacing: 5px;
     width: 90%;
     text-align: center;
@@ -430,7 +434,7 @@
   }
   
   .membership-head {
-    margin-top: 10px;
+    margin-top: 50px;
     padding-top: 90px;
   }
   
@@ -470,6 +474,7 @@
   }
   
   .membership-head h1 {
+    margin-top: 50px;
     font-size: 50px;
     padding-top: 0px;
     letter-spacing: 9px;
@@ -512,7 +517,7 @@
   }
   
   .membership-head p {
-    font-size: 11px;
+    font-size: 15px;
     letter-spacing: 4px;
     margin-left: 30px;
   }
@@ -553,21 +558,21 @@
 }
 
 /* Tablet Portrait - 600px to 767px */
-@media (max-width: 767px) and (min-width: 600px) {
+@media (max-width: 768px) and (min-width: 600px) {
   .membership-tiers {
     height: 100%;
     min-height: 130vh;
   }
   
   .membership-head h1 {
-    font-size: 35px;
+    font-size: 45px;
     letter-spacing: 6px;
     margin-left: 20px;
     width: 95%;
   }
   
   .membership-head p {
-    font-size: 10px;
+    font-size: 18px;
     letter-spacing: 3px;
     margin-left: 20px;
     width: 95%;
@@ -627,7 +632,7 @@
   }
   
   .membership-head p {
-    font-size: 9px;
+    font-size: 15px;
     letter-spacing: 2px;
     margin-left: 15px;
     width: 97%;
@@ -687,14 +692,14 @@
   }
   
   .membership-head h1 {
-    font-size: 24px;
-    letter-spacing: 3px;
+    font-size: 25px;
+    letter-spacing: 4px;
     margin-left: 10px;
     width: 98%;
   }
   
   .membership-head p {
-    font-size: 8px;
+    font-size: 15px;
     letter-spacing: 1.5px;
     margin-left: 10px;
     width: 98%;
@@ -820,21 +825,21 @@
 }
 
 /* Extra Small Mobile - below 320px */
-@media (max-width: 319px) {
+@media (max-width: 320px) {
   .membership-tiers {
     height: 100%;
     min-height: 180vh;
   }
   
   .membership-head h1 {
-    font-size: 18px;
-    letter-spacing: 1px;
+    font-size: 22px;
+    letter-spacing: 2px;
     margin-left: 2px;
     width: 100%;
   }
   
   .membership-head p {
-    font-size: 6px;
+    font-size: 15px;
     letter-spacing: 0.5px;
     margin-left: 2px;
     width: 100%;
@@ -849,11 +854,11 @@
   
   .card {
     width: 220px;
-    height: 150px;
+    height: 170px;
   }
   
   .card h3 {
-    font-size: 10px;
+    font-size: 14px;
     padding: 5px;
   }
   

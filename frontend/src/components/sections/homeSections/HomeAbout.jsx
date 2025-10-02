@@ -1,8 +1,13 @@
 import "./HomeAbout.css";
 import Button from "../../ui/Button";
+import { useState } from "react";
+import EarlySignUpForm from "../../forms/EarlySignup";
 const HomeAbout = ({ isVisible }) => {
+    const [isPopupClicked, setIsClicked] = useState(false);
+  
   return (
-    <div className="home-about">
+    <>
+      <div className="home-about">
       <div className="about-img">
         {isVisible && (
           <img
@@ -29,7 +34,7 @@ const HomeAbout = ({ isVisible }) => {
               height="40px"
               width="200px"
               className="primary-btn fade-move-up"
-              onClick={() => console.log("clicked")}
+              onClick={() => setIsClicked(true)}
               fontSize="12px"
             >
               JOIN NOW
@@ -38,6 +43,8 @@ const HomeAbout = ({ isVisible }) => {
         )}
       </div>
     </div>
+    {isPopupClicked && <EarlySignUpForm setIsClicked={setIsClicked}/>}
+    </>
   );
 };
 

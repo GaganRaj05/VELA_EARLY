@@ -4,83 +4,96 @@ import Button from "../../ui/Button";
 import { FaConciergeBell, FaRegCircle } from "react-icons/fa";
 import { SiTicktick } from "react-icons/si";
 import { ClipLoader } from "react-spinners";
-import {toast} from "react-toastify"
+import { toast } from "react-toastify";
 
 const cardContent = [
   {
-    icon: 'images/FoundingMemberUp.png',
+    icon: "images/FoundingMemberUp.png",
     head: "FOUNDING MEMBERS",
     price: "$199/month",
     content:
       "Unlock access to unlimited features during the initial start of our pack",
     flippable: false,
-    color: 'gold',
-    priceId:'price_1RncX9Fb79Sh0LVYDLoEEoJS',
+    color: "gold",
+    priceId: "price_1RncX9Fb79Sh0LVYDLoEEoJS",
   },
   {
-    icon: 'images/TEMP.png',
-    color: 'gold',
+    icon: "images/TEMP.png",
+    color: "gold",
     head: "CORE TIER",
     price: "/images/TemptationTuesday.png",
-    content: "A weekly offering of irresistible allure.. Temptation brought directly to you.",
-    priceId:'price_1RncX9Fb79Sh0LVYDLoEEoJS',
+    content:
+      "A weekly offering of irresistible allure.. Temptation brought directly to you.",
+    priceId: "price_1RncX9Fb79Sh0LVYDLoEEoJS",
     flippable: false,
     tier_info: [
       {
         tier_head: "Emotional Self-Discovery Tools",
-        tier_content: "Begin your VELA journey with limited emotional & attachment reports",
+        tier_content:
+          "Begin your VELA journey with limited emotional & attachment reports",
       },
       {
         tier_head: "Basic Profile Viewing",
-        tier_content: "Browse select member profiles with limited access to photos and insights",
+        tier_content:
+          "Browse select member profiles with limited access to photos and insights",
       },
       {
         tier_head: "Access to Temptation Tuesday (Preview Only)",
-        tier_content: "View your score summary without full compatibility breakdown.",
+        tier_content:
+          "View your score summary without full compatibility breakdown.",
       },
       {
         tier_head: "Read-Only Trust Score Preview",
-        tier_content: "View your score summary without full compatibility breakdown",
+        tier_content:
+          "View your score summary without full compatibility breakdown",
       },
       {
         tier_head: "Curated Invite to Public Events",
-        tier_content: "Begin your VELA journey with limited emotional & attachment reports",
+        tier_content:
+          "Begin your VELA journey with limited emotional & attachment reports",
       },
       {
         tier_head: "Private Messaging (Basic)",
-        tier_content: "Connect through text once mutual interest is established",
+        tier_content:
+          "Connect through text once mutual interest is established",
       },
       {
         tier_head: "Reveal Night Locked",
-        tier_content: "Reveal unlock available for $14 each Friday (expires at midnight).",
+        tier_content:
+          "Reveal unlock available for $14 each Friday (expires at midnight).",
         available: false,
       },
     ],
   },
   {
     icon: "/images/InnerCircleIc.png",
-    color: 'gold',
+    color: "gold",
     head: "INNER CIRCLE",
     price: "/images/DesireVault.png",
-    content: "Confidential personal desires, fantasies, and turn-ons stored for deeper alignment.",
-    priceId:'price_1RncX9Fb79Sh0LVYDLoEEoJS',
+    content:
+      "Confidential personal desires, fantasies, and turn-ons stored for deeper alignment.",
+    priceId: "price_1RncX9Fb79Sh0LVYDLoEEoJS",
     flippable: false,
     tier_info: [
       {
         tier_head: "Full Emotional AI Reports",
-        tier_content: "Unlock deep emotional, attachment, and compatibility insights with real-time updates",
+        tier_content:
+          "Unlock deep emotional, attachment, and compatibility insights with real-time updates",
       },
       {
         tier_head: "Full Profile Access",
-        tier_content: "View detailed profiles, photo galleries, desire questionnaires, and archetype matches",
+        tier_content:
+          "View detailed profiles, photo galleries, desire questionnaires, and archetype matches",
       },
       {
         tier_head: "Access to Temptation Tuesday (Preview Only)",
-        tier_content: "View your score summary without full compatibility breakdown.",
+        tier_content:
+          "View your score summary without full compatibility breakdown.",
       },
       {
         tier_head: "Unlimited Access to Temptation Tuesday",
-        tier_content: "Participate every Friday in the exclusive Reveal Night experience...",
+        tier_content:
+          "Participate every Friday in the exclusive Reveal Night experience...",
       },
       {
         tier_head: "Private Messaging (Full)",
@@ -96,7 +109,8 @@ const cardContent = [
       },
       {
         tier_head: "Invite Priority to Private Events",
-        tier_content: "Be the first to receive RSVPs for members-only events...",
+        tier_content:
+          "Be the first to receive RSVPs for members-only events...",
       },
       {
         tier_head: "Mystery Match Dinners",
@@ -107,16 +121,18 @@ const cardContent = [
   },
   {
     icon: <FaConciergeBell />,
-    color:'#dfb869',
+    color: "#dfb869",
     head: "CONCIERGE",
     price: "/images/MysteryMatch.png",
-    content: "VELA's most elite membership. Embodied luxury, private AI evolution, and real-world intimacy.",
-    priceId:'price_1RncX9Fb79Sh0LVYDLoEEoJS',
+    content:
+      "VELA's most elite membership. Embodied luxury, private AI evolution, and real-world intimacy.",
+    priceId: "price_1RncX9Fb79Sh0LVYDLoEEoJS",
     flippable: false,
     tier_info: [
       {
         tier_head: "Mystery Match Dinners (2/year)",
-        tier_content: "Hand-curated blind date experiences, all Dinner expenses covered",
+        tier_content:
+          "Hand-curated blind date experiences, all Dinner expenses covered",
       },
       {
         tier_head: "Emotional Architect Sessions (New)",
@@ -151,18 +167,19 @@ const cardContent = [
   },
 ];
 
-import { loadStripe } from '@stripe/stripe-js';
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY)
-
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
+import EarlySignUpForm from "../../forms/EarlySignup";
 const MemberShip = ({ isVisible }) => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [Loading, setLoading] = useState(false);
-  
+  const [isPopupClicked, setIsClicked] = useState(false);
+
   const handleCardClick = (card) => {
     if (card.tier_info) {
       setSelectedCard(card);
-      setShowModal(true);
+      setShowModal(false);
     }
   };
 
@@ -172,43 +189,42 @@ const MemberShip = ({ isVisible }) => {
   };
 
   const renderIcon = (icon, color) => {
-    if(icon === "images/TEMP.png" ) {
-      return (
-                <img
-        src={icon}
-        alt="icon"
-        id={icon.replaceAll('/', '')}
-        style={{ width: "90px", height:"80px", objectFit: "contain" }}
-      />
-      )
-    }
-    if(icon === "/images/InnerCircleIc.png" ) {
-      return (
-                <img
-        src={icon}
-        alt="icon"
-        id={icon.replaceAll('/', '')}
-        style={{ width: "90px", height:"80px", objectFit: "contain" }}
-      />
-      )
-    }
-    if(icon==="images/goldkey.png") {
+    if (icon === "images/TEMP.png") {
       return (
         <img
-        src={icon}
-        alt="icon"
-        id={icon.replaceAll('/', '')}
-        style={{ width: "90px", height: "80px", objectFit: "contain" }}
-      />
-      )
+          src={icon}
+          alt="icon"
+          id={icon.replaceAll("/", "")}
+          style={{ width: "90px", height: "80px", objectFit: "contain" }}
+        />
+      );
+    }
+    if (icon === "/images/InnerCircleIc.png") {
+      return (
+        <img
+          src={icon}
+          alt="icon"
+          id={icon.replaceAll("/", "")}
+          style={{ width: "90px", height: "80px", objectFit: "contain" }}
+        />
+      );
+    }
+    if (icon === "images/goldkey.png") {
+      return (
+        <img
+          src={icon}
+          alt="icon"
+          id={icon.replaceAll("/", "")}
+          style={{ width: "90px", height: "80px", objectFit: "contain" }}
+        />
+      );
     }
 
-    return typeof icon === "string"? (
-      
+    return typeof icon === "string" ? (
       <img
         src={icon}
         alt="icon"
-        id={icon.replaceAll('/', '')}
+        id={icon.replaceAll("/", "")}
         style={{ width: "70px", height: "50px", objectFit: "contain" }}
       />
     ) : (
@@ -216,103 +232,105 @@ const MemberShip = ({ isVisible }) => {
     );
   };
 
-  const handleSubscription = async(priceId) => {
+  const handleSubscription = async (priceId) => {
     setLoading(true);
-    const res = await fetch(`http://localhost:7000/api/payments/create-payment-session`, {
-      method:'POST',
-      headers:{'Content-type':'application/json'},
-      body: JSON.stringify({
-        email:'gaganraj.dev05@gmail.com',
-        priceId:priceId,
-      }),
-    })
+    const res = await fetch(
+      `http://localhost:7000/api/payments/create-payment-session`,
+      {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          email: "gaganraj.dev05@gmail.com",
+          priceId: priceId,
+        }),
+      }
+    );
     const data = await res.json();
     setLoading(false);
     const stripe = await stripePromise;
-    await stripe.redirectToCheckout({sessionId:data.session_id});
-  }
+    await stripe.redirectToCheckout({ sessionId: data.session_id });
+  };
 
   return (
     <div className="membership-tiers">
       {isVisible && (
         <>
-                  <div className="membership-head">
-          <h1 className="fade-move-up">EXCLUSIVITY HAS ITS LEVELS</h1>
-          <p className="fade-move-up">
-            Founding members to Inner Circle. Each tier unlocks a world of deeper matches
-          </p>
-        </div>
-        <div className="membershipt-tiers-cards">
-        {cardContent.map((card, index) => (
-          <div
-            key={index}
-            className={`card ${card.flippable ? "flippable" : ""} fade-move-up`}
-            style={{ width: "300px", height: "300px" }}
-            onClick={() => handleCardClick(card)}
-          >
-            {card.flippable ? (
-              <div className="card-inner">
-                <div className="card-front">
-                  {renderIcon(card.icon, card.color)}
-                  <h3>{card.head}</h3>
-                  <Button
-                    height="28.88px"
-                    width="170px"
-                    className="primary-btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleCardClick(card);
-                    }}
-                    fontSize="12px"
-                  >
-                    JOIN NOW
-                  </Button>
-                </div>
-                <div className="card-back">
-                  {renderIcon(card.icon, card.color)}
-                  <h3>{card.head}</h3>
-                  <div className="price">{card.price}</div>
-                  <p>{card.content}</p>
-                  <Button
-                    height="28.88px"
-                    width="170px"
-                    className="primary-btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleCardClick(card);
-                    }}
-                    fontSize="12px"
-                  >
-                    JOIN NOW
-                  </Button>
-                </div>
-              </div>
-            ) : (
-              <div className="card-static ">
-                {renderIcon(card.icon, card.color)}
-                <h3>{card.head}</h3>
-                <Button
-                  height="30px"
-                  width="170px"
-                  className="primary-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleCardClick(card);
-                  }}
-                  fontSize="12px"
-                >
-                  KNOW MORE
-                </Button>
-              </div>
-            )}
+          <div className="membership-head">
+            <h1 className="new-head fade-move-up">EXCLUSIVITY HAS ITS LEVELS</h1>
+            <p className="fade-move-up" style={{color:"#aaa9a5"}}>
+              Founding members to Inner Circle. Each tier unlocks a world of
+              deeper matches
+            </p>
           </div>
-        ))}
-      </div>
-
+          <div className="membershipt-tiers-cards">
+            {cardContent.map((card, index) => (
+              <div
+                key={index}
+                className={`card ${
+                  card.flippable ? "flippable" : ""
+                } fade-move-up`}
+                
+                onClick={() => handleCardClick(card)}
+              >
+                {card.flippable ? (
+                  <div className="card-inner">
+                    <div className="card-front">
+                      {renderIcon(card.icon, card.color)}
+                      <h3>{card.head}</h3>
+                      <Button
+                        height="28.88px"
+                        width="170px"
+                        className="primary-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCardClick(card);
+                        }}
+                        fontSize="12px"
+                      >
+                        JOIN NOW
+                      </Button>
+                    </div>
+                    <div className="card-back">
+                      {renderIcon(card.icon, card.color)}
+                      <h3>{card.head}</h3>
+                      <div className="price">{card.price}</div>
+                      <p>{card.content}</p>
+                      <Button
+                        height="28.88px"
+                        width="170px"
+                        className="primary-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCardClick(card);
+                        }}
+                        fontSize="12px"
+                      >
+                        JOIN NOW
+                      </Button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="card-static ">
+                    {renderIcon(card.icon, card.color)}
+                    <h3>{card.head}</h3>
+                    <Button
+                      height="30px"
+                      width="170px"
+                      className="primary-btn"
+                      onClick={(e) => {
+                        setIsClicked(true)
+                      }}
+                      fontSize="12px"
+                    >
+                      KNOW MORE
+                    </Button>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </>
-)}
-
-      
+      )}
 
       {showModal && selectedCard && (
         <div className="modal-overlay" onClick={closeModal}>
@@ -321,24 +339,36 @@ const MemberShip = ({ isVisible }) => {
             <button className="modal-close" onClick={closeModal}>
               ×
             </button>
-            
+
             <div style={{ textAlign: "center", marginBottom: "1rem" }}>
               <div className="modal-card-head">
-                <div style={{ fontSize: "2rem", color: selectedCard.color || "white", marginRight:'10px' }}>
+                <div
+                  style={{
+                    fontSize: "2rem",
+                    color: selectedCard.color || "white",
+                    marginRight: "10px",
+                  }}
+                >
                   {renderIcon(selectedCard.icon, selectedCard.color)}
                 </div>
                 <h1 style={{ margin: "0.5rem 0" }}>{selectedCard.head}</h1>
               </div>
               <div className="tier-info-head-temp">
-                <p style={{ maxWidth: "420px", fontSize: "18px" }}>{selectedCard.content}</p>
+                <p style={{ maxWidth: "420px", fontSize: "18px" }}>
+                  {selectedCard.content}
+                </p>
               </div>
             </div>
-            
+
             <ul className="tier-info-list">
               {selectedCard.tier_info.map((item, i) => (
                 <li key={i}>
                   <span className="icon">
-                    {item.available === false ? "❌" : <SiTicktick color="gold" />}
+                    {item.available === false ? (
+                      "❌"
+                    ) : (
+                      <SiTicktick color="gold" />
+                    )}
                   </span>
                   <div>
                     <strong>{item.tier_head}</strong>
@@ -347,7 +377,7 @@ const MemberShip = ({ isVisible }) => {
                 </li>
               ))}
             </ul>
-            
+
             <div className="modal-controls">
               <Button
                 height="40px"
@@ -356,12 +386,13 @@ const MemberShip = ({ isVisible }) => {
                 onClick={() => handleSubscription(selectedCard.priceId)}
                 fontSize="12px"
               >
-                {Loading ? <ClipLoader/> : 'JOIN NOW'}
+                {Loading ? <ClipLoader /> : "JOIN NOW"}
               </Button>
             </div>
           </div>
         </div>
       )}
+      {isPopupClicked && <EarlySignUpForm setIsClicked={setIsClicked}/>}
     </div>
   );
 };
