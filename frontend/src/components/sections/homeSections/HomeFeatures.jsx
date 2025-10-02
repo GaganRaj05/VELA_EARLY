@@ -43,7 +43,7 @@ const HomeFeatures = ({isVisible}) => {
           loop
           muted
           playsInline
-          poster="/images/tiers-page-background.png"
+          poster="/images/Features-Poster.png"
         >
           <source src="/videos/doors.mp4" type="video/mp4" />
         </video>

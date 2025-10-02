@@ -18,7 +18,7 @@ export default function ReusableSection({
           <img src={`/videos/${video}.png`} alt="Reveal Night background" />
         ) : (
           isVisible && (
-            <video ref={videoRef} loading="lazy" autoPlay loop muted>
+            <video ref={videoRef} loading="lazy" autoPlay loop muted poster={`/images/${video}-poster.png`}>
               <source src={`/videos/${video}.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -46,8 +46,7 @@ export default function ReusableSection({
                 width="368px"
                 margin="0px"
                 borderRadius="33px"
-                                onClick={()=>setIsClicked(true)}
-
+                onClick={() => setIsClicked(true)}
               >
                 FIND YOUR MATCH NOW
               </Button>

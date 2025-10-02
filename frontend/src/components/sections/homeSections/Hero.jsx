@@ -16,7 +16,7 @@ export default function Hero() {
           loop
           muted
           playsInline
-          poster="/images/tiers-page-background.png"
+          poster="/images/Hero-poster.png"
         >
           <source src="/videos/3.mp4" type="video/mp4" />
         </video>
