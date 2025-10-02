@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./Hero.css";
 import Button from "../../ui/Button";
 import EarlySignUpForm from "../../forms/EarlySignup";
@@ -9,20 +9,38 @@ export default function ReusableSection({
   isVisible,
   secHead,
 }) {
+  useEffect(() => {
+    if (isVisible && videoRef.current) {
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.currentTime = 0;
+          videoRef.current.play().catch((error) => {
+            console.log("Autoplay prevented, user interaction required");
+          });
+        }
+      }, 100);
+    }
+  }, [isVisible]);
   const videoRef = useRef(null);
   const [isPopupClicked, setIsClicked] = useState(false);
+
   return (
     <div className="hero-section">
       <div className="video-background">
         {video === "RevealNight" || video === "DesireVault" ? (
           <img src={`/videos/${video}.png`} alt="Reveal Night background" />
         ) : (
-          isVisible && (
-            <video ref={videoRef} loading="lazy" autoPlay loop muted poster={`/images/${video}-poster.png`}>
-              <source src={`/videos/${video}.mp4`} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )
+          <video
+            ref={videoRef}
+            loading="eager"
+            autoPlay
+            loop
+            muted
+            poster={`/images/${video}-poster.png`}
+          >
+            <source src={`/videos/${video}.mp4`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         )}
       </div>
 

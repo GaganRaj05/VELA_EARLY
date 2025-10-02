@@ -1,5 +1,5 @@
 import "./HomeFeatures.css";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Cards from "../../ui/Cards";
 const cardContent = [
   {
@@ -32,13 +32,26 @@ const cardContent = [
 
 const HomeFeatures = ({isVisible}) => {
     const videoRef = useRef(null);
-  
+    useEffect(() => {
+    if (isVisible && videoRef.current) {
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.currentTime = 0;
+          videoRef.current.play().catch((error) => {
+            console.log("Autoplay prevented, user interaction required");
+          });
+        }
+      }, 100);
+    }
+  }, [isVisible]);
+
   return (
     <div className="home-features">
       <div className="video-background features-video">
-       {isVisible &&
+        
          <video
           ref={videoRef}
+          loading="eager"  
           autoPlay
           loop
           muted
@@ -47,7 +60,7 @@ const HomeFeatures = ({isVisible}) => {
         >
           <source src="/videos/doors.mp4" type="video/mp4" />
         </video>
-       }
+      
       </div>
 
       <div className="feature-text">

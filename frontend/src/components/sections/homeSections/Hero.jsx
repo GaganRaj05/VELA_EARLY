@@ -1,4 +1,4 @@
-import {  useRef, useState } from "react";
+import {  useRef, useState, useEffect } from "react";
 import "./Hero.css";
 import Button from "../../ui/Button";
 import { IoIosArrowRoundForward } from "react-icons/io";
@@ -7,11 +7,14 @@ import EarlySignUpForm from "../../forms/EarlySignup";
 export default function Hero() {
   const videoRef = useRef(null);
   const [isPopupClicked, setIsClicked] = useState(false);
+  
   return (
     <div className="hero-section">
       <div className="video-background">
         <video
+         
           ref={videoRef}
+          loading="eager" 
           autoPlay
           loop
           muted
