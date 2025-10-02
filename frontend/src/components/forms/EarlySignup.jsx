@@ -1,4 +1,4 @@
-import "./EarlySignUpForm.css";
+import "./EarlySignupForm.css";
 import {HeartHandshake} from "lucide-react"
 import { useEffect, useState } from "react";
 import {ClipLoader} from "react-spinners"
