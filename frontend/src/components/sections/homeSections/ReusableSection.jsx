@@ -10,28 +10,39 @@ export default function ReusableSection({
   secHead,
 }) {
   useEffect(() => {
-  if (isVisible && videoRef.current) {
-    const playVideo = async () => {
-      try {
-        videoRef.current.currentTime = 0;
-        await videoRef.current.play();
-        setUserInteracted(true); 
-      } catch (error) {
-        console.log("Autoplay blocked, waiting for user interaction");
-      }
-    };
-    
-    playVideo();
-  }
-}, [isVisible]);
+    if (isVisible && videoRef.current) {
+      const playVideo = async () => {
+        try {
+          videoRef.current.currentTime = 0;
+          await videoRef.current.play();
+          setUserInteracted(true);
+        } catch (error) {
+          console.log("Autoplay blocked, waiting for user interaction");
+        }
+      };
+
+      playVideo();
+    }
+  }, [isVisible]);
   const videoRef = useRef(null);
   const [isPopupClicked, setIsClicked] = useState(false);
 
   return (
     <div className="hero-section">
       <div className="video-background">
-        {video === "RevealNight" || video === "DesireVault" ? (
-          <img src={`/videos/${video}.png`} alt="Reveal Night background" />
+        {video === "RevealNight" ? (
+          <>
+            <img
+              src={`/videos/${video}.png`}
+              alt="Reveal Night background"
+              className="reveal-night-desktop"
+            />
+            <img 
+              src="/videos/RevealNightForSmaller.png"
+              alt="Reveal Night Background"
+              className="reveal-night-mobile"
+            />
+          </>
         ) : (
           <video
             ref={videoRef}
@@ -50,7 +61,13 @@ export default function ReusableSection({
       <div className="hero-content">
         {isVisible && (
           <>
-            <h1 className={secHead === "REVEAL NIGHT"?"new-head hoho fade-move-up mr-removed":"new-head hoho fade-move-up"}>
+            <h1
+              className={
+                secHead === "REVEAL NIGHT"
+                  ? "new-head hoho fade-move-up mr-removed"
+                  : "new-head hoho fade-move-up"
+              }
+            >
               {secHead ? secHead : ""}{" "}
             </h1>
             <h1

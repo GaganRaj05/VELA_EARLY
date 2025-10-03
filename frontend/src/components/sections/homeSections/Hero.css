@@ -112,6 +112,14 @@ font-weight: 300;
   color: black;
   font-size: 30px;
 }
+.video-background img.reveal-night-desktop {
+  display: block;
+}
+
+.video-background img.reveal-night-mobile {
+  display: none;
+}
+
 
 .hero-button:hover .arrow-icon {
   opacity: 1;
@@ -143,6 +151,10 @@ font-weight: 300;
   .hero-content button {
     height: 30px;
     font-size: 15px;
+    text-align: center;
+  }
+  .arrow-icon {
+    display: none;
   }
 }
 @media (max-width:620px) {
@@ -165,6 +177,13 @@ font-weight: 300;
   
 }
 @media (max-width:530px) {
+    .video-background img.reveal-night-desktop {
+    display: none;
+  }
+  .video-background img.reveal-night-mobile {
+    display: block;
+  }
+
   .hero-section {
     height: 100vh;
   }
