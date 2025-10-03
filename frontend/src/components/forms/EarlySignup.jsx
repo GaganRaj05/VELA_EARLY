@@ -37,7 +37,7 @@ const EarlySignUpForm = ({ setIsClicked }) => {
         </button>
         <form className="early-signup-form " onSubmit={(e)=>handleSubmit(e)}>
 <HeartHandshake size={50} />            <h1>EARLY SIGNUP</h1>
-            <p>Once 1000 members join, VELA officially Launches</p>
+            <p>Join the Pre-Launch Waitlist, Only <span className="crea">1000 Founding Members</span> spots—secure yours now for guaranteed early access.</p>
           <input
             type="text"
             name="name"

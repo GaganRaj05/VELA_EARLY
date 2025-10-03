@@ -120,7 +120,7 @@ const cardContent = [
     ],
   },
   {
-    icon: <FaConciergeBell />,
+    icon: "/images/Conceirege.png",
     color: "#dfb869",
     head: "CONCIERGE",
     price: "/images/MysteryMatch.png",
@@ -199,7 +199,7 @@ const MemberShip = ({ isVisible }) => {
         />
       );
     }
-    if (icon === "/images/InnerCircleIc.png") {
+    if (icon === "/images/InnerCircleIc.png" ) {
       return (
         <img
           src={icon}

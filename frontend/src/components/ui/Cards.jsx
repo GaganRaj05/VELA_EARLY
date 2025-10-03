@@ -15,18 +15,17 @@ const Cards = ({
   return (
     <div className="card-container fade-move-up" style={{ height, width }}>
       <div className="card-inner">
-        <div className="card-front" >
+        <div className="card-front">
           <img
             src={imgBeforeFlip}
             id={getIdFromPath(imgBeforeFlip)}
             alt="Front"
           />
 
-          <h3 style={{  color: "#B4A36C"
-}}>{head}</h3>
+          <h3 style={{ color: "#B4A36C" }}>{head}</h3>
         </div>
 
-        <div className="card-back" id={getIdFromPath(imgBeforeFlip)+'bg'}>
+        <div className="card-back" id={getIdFromPath(imgBeforeFlip) + "bg"}>
           <img
             src={imgBeforeFlip}
             id={getIdFromPath(imgBeforeFlip)}

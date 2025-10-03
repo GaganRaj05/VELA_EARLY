@@ -12,6 +12,7 @@
   z-index: 2000;
 }
 
+
 .early-signup-container {
       font-family: "Cormorant", serif;
 
@@ -91,11 +92,12 @@
 }
 
 .early-signup-form p {
-  font-size: 22px;
+  font-size: 18px;
   margin: 0;
   color: #bdbbb4;
-  width: 70%;
+  width: 100%;
   text-align: center;
+  
   margin-bottom: 10px;
 }
 
@@ -124,6 +126,9 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+.crea {
+  color: #b68f5b;
+}
 /* Responsive styles */
 @media (max-width: 768px) {
   .early-signup-container {
@@ -234,10 +239,10 @@
 }
 
 .early-signup-form p {
-  font-size: 22px;
+  font-size: 18px;
   margin: 0;
   color: #bdbbb4;
-  width: 80%;
+  width: 100%;
   text-align: center;
   margin-bottom: 10px;
 }
