@@ -27,7 +27,7 @@
   overflow: hidden;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      border: 2px solid #B4A36C!important;
+      border: 0.5px solid #B4A36C!important;
 
   text-align: center;
   padding: 20px;
