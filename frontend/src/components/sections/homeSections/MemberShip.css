@@ -28,6 +28,8 @@
 }
 
 .card-static {
+  height: 100%;
+  width: 100%;
       border: 0.5px solid #b4a36c!important;
     border-radius: 10px;
     display: flex;
@@ -214,6 +216,10 @@
   height: 3px;
   background: linear-gradient(90deg, transparent 0%, #FFD700 20%, #FFA500 50%, #FFD700 80%, transparent 100%);
   border-radius: 0 0 10px 10px;
+}
+.mrm {
+  margin-top: 20px!important;
+  padding-top: 0;
 }
 
 @keyframes modalSlideIn {

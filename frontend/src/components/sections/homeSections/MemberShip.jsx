@@ -225,7 +225,7 @@ const MemberShip = ({ isVisible }) => {
         src={icon}
         alt="icon"
         id={icon.replaceAll("/", "")}
-        style={{ width: "70px", height: "50px", objectFit: "contain" }}
+        style={{ width: "90px", height: "80px", objectFit: "contain" }}
       />
     ) : (
       <span style={{ color: color || "white", fontSize: "40px" }}>{icon}</span>
@@ -312,7 +312,7 @@ const MemberShip = ({ isVisible }) => {
                 ) : (
                   <div className="card-static ">
                     {renderIcon(card.icon, card.color)}
-                    <h3>{card.head}</h3>
+                    <h3 >{card.head}</h3>
                     <Button
                       height="30px"
                       width="170px"
