@@ -2,6 +2,11 @@
   perspective: 1000px;
   margin: 0;
   padding: 0;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* This ensures consistent alignment */
+
 }
 
 .card-inner {
@@ -49,6 +54,11 @@
   font-size: 1.2rem;
   letter-spacing: 3px;
   text-transform: uppercase;
+    min-height: 60px; /* This ensures all h3 elements have the same height */
+  display: flex;
+  align-items: center; /* Vertically centers the text */
+  justify-content: center;
+
 }
 
 .card-back {
@@ -123,6 +133,10 @@
     height: 200px !important;
     width: 200px!important;
   }
+    .card-front h3 {
+    min-height: 50px; /* Slightly smaller for medium screens */
+  }
+
 }
 
 
@@ -135,7 +149,12 @@
   .card-front h3 {
     font-size: 15px!important;
   }
-  
+    .card-front h3 {
+    font-size: 15px!important;
+    min-height: 45px; /* Adjust for smaller screens */
+    align-items: start;
+  }
+
   .card-back p {
     font-size: 12px;
   }
@@ -145,4 +164,8 @@
     height: 150px!important;
     width: 150px!important;
   }
+    .card-front h3 {
+    min-height: 40px; /* Adjust for mobile */
+  }
+
 }
